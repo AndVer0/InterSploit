@@ -1,7 +1,7 @@
 import pyfiglet
 import os
 from colorama import Fore
-ascii_banner = pyfiglet.figlet_format("WebHACKER")
+ascii_banner = pyfiglet.figlet_format("WebSploit")
 print(Fore.BLUE)
 print(ascii_banner)
 print(Fore.WHITE)
