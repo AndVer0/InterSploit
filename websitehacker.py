@@ -1,4 +1,5 @@
 import pyfiglet
+import os
 from colorama import Fore
 ascii_banner = pyfiglet.figlet_format("WebHACKER")
 print(Fore.BLUE)
@@ -8,11 +9,10 @@ print('1: admin panel finder (bruteforcer)')
 print('2: web scarper(extract data)')
 print('  ')
 check = input("enter number:")
-
 if check == '1':
-  import adminchecker
+		os.system('python3 ./tool/adminchecker.py')
 elif check == '2':
-	import webviewer
+    	os.system('python3 ./tool/webviewer.py')
 else:
 	print('number not found')
 	
