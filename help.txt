@@ -1,5 +1,0 @@
-if you want install it use:
-	pip install colorama
-	pip install --upgrade pip
-	pip install pyfiglet
-	pip install bs4
