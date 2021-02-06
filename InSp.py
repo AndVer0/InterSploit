@@ -1,8 +1,8 @@
 import pyfiglet
 import os
-from colorama import Fore
+from colorama import *
 ascii_banner = pyfiglet.figlet_format("InterSploit")
-print(ascii_banner)
+print(ascii_banner + '                                                 ' + Fore.LIGHTCYAN_EX + 'v 0.1.2' + Fore.WHITE)
 print('use ' + Fore.RED + 'show options ' + Fore.WHITE + 'to show options')
 show = input('InSp>')
 if show == "show options":
