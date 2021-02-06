@@ -9,9 +9,9 @@ myTable.add_row(["run", " "])
 if choice  == 'show options':
 	print(myTable)
 elif choice == 'SUrl':
-	url = input('InSp' + Fore.RED + '(option/AP finder/SUrl)' + Fore.WHITE + '>')
+	url = input('InSp' + Fore.RED + '(option/webscarper/SUrl)' + Fore.WHITE + '>')
 	print(Fore.RED + 'SUrl ==> ' + Fore.GREEN + url + Fore.WHITE)
-	run = input('InSp' + Fore.RED + '(option/AP finder/SUrl)' + Fore.WHITE + '>')
+	run = input('InSp' + Fore.RED + '(option/webscarper/SUrl)' + Fore.WHITE + '>')
 #sub Surl if you choice is run(run methode)
 	if run == 'run':
 		print('[' + Fore.BLUE + '*' + Fore.WHITE + ']' + 'starting...')
