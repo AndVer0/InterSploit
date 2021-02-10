@@ -2,3 +2,4 @@ colorama
 pyfiglet
 bs4
 prettytable
+requests
