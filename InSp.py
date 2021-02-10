@@ -12,6 +12,7 @@ if show == "show options":
 	print('   option/portscanner')
 	print('   option/AR finder')
 	print('   option/SD detector')
+	print('   option/XSS scanner')
 else:
 	print(show + Fore.RED +' not found' + Fore.WHITE)
 	print(Fore.GREEN + '[*]' + Fore.WHITE + 'use ' + Fore.RED + 'show options' + Fore.WHITE)
@@ -29,6 +30,8 @@ elif choice == 'use option/AR finder':
 	os.system('python ./tool/adminrouter.py')
 elif choice == 'use option/SD detector':
 	os.system('python ./tool/sdd.py')
+elif choice == 'use option/XSS scanner':
+	os.system('python ./tool/xss.py')
 else:
 	print(Fore.RED + 'Error number' + Fore.WHITE)
 	print(Fore.GREEN + '[!]' + Fore.WHITE + '[ ' + choice + ' ]' + Fore.RED + ' not found' + Fore.WHITE)
