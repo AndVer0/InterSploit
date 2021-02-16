@@ -3,3 +3,6 @@ pyfiglet
 bs4
 prettytable
 requests
+pprint
+requests
+urllib
