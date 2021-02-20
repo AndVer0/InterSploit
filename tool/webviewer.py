@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from colorama import *
+import os
 from urllib.request  import urlopen
 from prettytable import PrettyTable
 choice = input('InSp' + Fore.RED + '(option/webscarper)' + Fore.WHITE + '>')
@@ -8,6 +9,7 @@ myTable.add_row(["SUrl", "link of site (www.site.com)"])
 myTable.add_row(["run", " "])
 if choice  == 'show options':
 	print(myTable)
+	os.system('python ./tool/webviewer.py')
 elif choice == 'SUrl':
 	url = input('InSp' + Fore.RED + '(option/webscarper/SUrl)' + Fore.WHITE + '>')
 	print(Fore.RED + 'SUrl ==> ' + Fore.GREEN + url + Fore.WHITE)
@@ -33,12 +35,14 @@ elif choice == 'SUrl':
 		print(a.prettify())
 		
 	elif run == '':
-		print(myTable)
-		quit()
+		os.system('clear')
+		os.system('python ./tool/webviewer.py')
 #if you choice is not correct
 	else:
 		print(Fore.GREEN + '[!]' + Fore.WHITE + '[ ' + run + ' ]' + Fore.RED + ' not found' + Fore.WHITE)
-		print(myTable)
-		quit()
+		os.system('clear')
+		os.system('python ./tool/webviewer.py')
 else:
 	print(Fore.RED + choice + Fore.WHITE + ' not found')
+	os.system('clear')
+	os.system('python ./tool/webviewer.py')

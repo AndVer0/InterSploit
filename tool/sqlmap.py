@@ -4,6 +4,7 @@ from prettytable import PrettyTable
 from bs4 import BeautifulSoup as bs
 from urllib.parse import urljoin
 from pprint import pprint
+import os
 s = requests.Session()
 s.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36"
 
@@ -103,7 +104,7 @@ myTable.add_row(["SUrl", "url (ex: www.site.com/php?id=1)"])
 myTable.add_row(["run", " "])
 if choice  == 'show options':
 	print(myTable)
-	quit()
+	os.system('python ./tool/sqlmap.py')
 elif choice == 'SUrl':
 	urlo = input('InSp' + Fore.RED + '(option/SQLiScanner/SUrl)' + Fore.WHITE + '>')
 	print(Fore.RED + 'SUrl ==> ' + Fore.GREEN + urlo + Fore.WHITE)
@@ -124,3 +125,5 @@ elif choice == 'SUrl':
 			scan_sql_injection(url)
 else:
 	print(Fore.RED + choice + Fore.WHITE + ' not found')
+	os.system('clear')
+	os.system('python ./tool/sqlmap.py')

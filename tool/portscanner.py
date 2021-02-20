@@ -1,10 +1,8 @@
 from colorama import *
-import socket
-import threading
+import socket, threading
 import concurrent.futures
 from prettytable import *
-import time
-import sys
+import time, sys, os
 print_lock = threading.Lock()
 choice = input('InSp' + Fore.RED + '(option/portscanner)' + Fore.WHITE + '>')
 myTable = PrettyTable(["Command", "Info"])
@@ -13,7 +11,7 @@ myTable.add_row(["run", " "])
 
 if choice  == 'show options':
 	print(myTable)
-	
+	os.system('python ./tool/portscanner.py')
 elif choice == 'SIp':
 	ip = input('InSp' + Fore.RED + '(option/portscanner/SIp)' + Fore.WHITE + '>')
 	print(Fore.RED + 'SIp ==> ' + Fore.GREEN + ip + Fore.WHITE)
@@ -86,13 +84,15 @@ elif choice == 'SIp':
 				exceutor.submit(scan, ip, port + 1)
 #run	
 	elif run == '':
-		print(myTable)
-		quit()
+		os.system('clear')
+		os.system('python ./tool/portscanner.py')
 #if you choice is not correct
 	else:
 		print(Fore.GREEN + '[!]' + Fore.WHITE + '[ ' + run + ' ]' + Fore.RED + ' not found' + Fore.WHITE)
-		print(myTable)
-		quit()
+		os.system('clear')
+		os.system('python ./tool/portscanner.py')
 else:
 	print(Fore.RED + choice + Fore.WHITE + ' not found')
+	os.system('clear')
+	os.system('python ./tool/portscanner.py')
 	

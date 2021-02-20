@@ -1,5 +1,5 @@
 from colorama import *
-import sys
+import sys, os
 import requests
 from prettytable import PrettyTable
 choice = input('InSp' + Fore.RED + '(option/SD detector)' + Fore.WHITE + '>')
@@ -8,7 +8,7 @@ myTable.add_row(["SUrl", "host (ex: www.example.com)"])
 myTable.add_row(["run", " "])
 if choice  == 'show options':
 	print(myTable)
-	quit()
+	os.system('python ./tool/sdd.py')
 elif choice == 'SUrl':
 	url = input('InSp' + Fore.RED + '(option/SD detector/SUrl)' + Fore.WHITE + '>')
 	print(Fore.RED + 'SUrl ==> ' + Fore.GREEN + url + Fore.WHITE)
@@ -50,4 +50,6 @@ elif choice == 'SUrl':
 			except KeyboardInterrupt:
 				sys.exit()
 else:
-	print(Fore.RED + choice + Fore.WHITE + 'not found')
+	print(Fore.RED + choice + Fore.WHITE + ' not found')
+	os.system('clear')
+	os.system('python ./tool/sdd.py')

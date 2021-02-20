@@ -4,7 +4,7 @@ from pprint import pprint
 from bs4 import BeautifulSoup as bs
 import requests
 from prettytable import PrettyTable
-
+import os
 def get_all_forms(url):
     """Given a `url`, it returns all forms from the HTML content"""
     soup = bs(requests.get(url).content, "html.parser")
@@ -87,7 +87,7 @@ def scan_xss(url):
     # get all the forms from the URL
     forms = get_all_forms(url)
     print(f"[+] Detected {len(forms)} forms on {url}.")
-    js_script = "<Script>alert('hi')</scripT>"
+    js_script = "<script>alert('hi')</script>"
     # returning value
     is_vulnerable = False
     # iterate over all forms
@@ -108,7 +108,7 @@ myTable.add_row(["SUrl", "host (ex: www.example.com + get_name (ex: ?item= ))"])
 myTable.add_row(["run", " "])
 if choice  == 'show options':
 	print(myTable)
-	quit()
+	os.system('python ./tool/xss.py')
 elif choice == 'SUrl':
 	url1 = input('InSp' + Fore.RED + '(option/XSS scanner/SUrl)' + Fore.WHITE + '>')
 	print(Fore.RED + 'SUrl ==> ' + Fore.GREEN + url1 + Fore.WHITE)
@@ -129,3 +129,5 @@ elif choice == 'SUrl':
 			print(scan_xss(url))		
 else:
 	print(Fore.RED + choice + Fore.WHITE + 'not found')
+	os.system('clear')
+	os.system('python ./tool/xss.py')

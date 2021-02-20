@@ -1,7 +1,8 @@
-from colorama import Fore, Back, Style
+from colorama import *
 from urllib.request import *
 from urllib.error import *
 from prettytable import PrettyTable
+import os
 file = open('./tool/link.txt', 'r')
 choice = input('InSp' + Fore.RED + '(option/AP finder)' + Fore.WHITE + '>')
 myTable = PrettyTable(["Command", "Info"])
@@ -10,6 +11,7 @@ myTable.add_row(["run", " "])
 #show option 1
 if choice == 'show options':
 	print(myTable)
+	os.system('python ./tool/adminchecker.py')
 #if choice is vide
 elif choice == '':
 	print(Fore.GREEN + '[!]' + Fore.WHITE + '[ ' + choice + ' ]' + Fore.RED + ' not found' + Fore.WHITE)
@@ -62,16 +64,16 @@ elif choice == 'SUrl':
 				print(Fore.GREEN + '[+] Ok ==>', req_link)
 #sub Surl if you choice is vide
 	elif run == '':
-		print(myTable)
-		quit()
+		os.system('clear')
+		os.system('python ./tool/adminchecker.py')
 #if you choice is not correct
 	else:
 		print(Fore.GREEN + '[!]' + Fore.WHITE + '[ ' + run + ' ]' + Fore.RED + ' not found' + Fore.WHITE)
-		print(myTable)
-		quit()
+		os.system('clear')
+		os.system('python ./tool/adminchecker.py')
 #if you choice is not correct
 else:
 	print(Fore.GREEN + '[!]' + Fore.WHITE + '[ ' + choice + ' ]' + Fore.RED + ' not found' + Fore.WHITE)
-	print(myTable)
-	quit()
+	os.system('clear')
+	os.system('python ./tool/adminchecker.py')
 	
